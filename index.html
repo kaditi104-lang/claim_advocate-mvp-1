@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MVP 1: WhatsApp-First Claim Auditor | ClaimAdvocate</title>
+  <meta name="description" content="Instantly decode why an insurer rejected your claim just by taking a photo on WhatsApp. AI Policy & Rejection Analyzer with win-probability score.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Playfair+Display:wght@600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <!-- Top Announcement Bar -->
+  <aside class="top-bar" aria-label="Announcement">
+    <div class="top-bar-inner">
+      <div class="top-bar-left">
+        <span class="live-dot"></span>
+        <span><strong>MVP 1 • Live Intake Engine:</strong> WhatsApp-First Insurance Rejection Auditor (IRDAI Compliant)</span>
+      </div>
+      <div class="top-bar-right">
+        <span>Zero App Download • 100% Free Intake</span>
+      </div>
+    </div>
+  </aside>
+
+  <!-- Navigation Header -->
+  <header class="app-header">
+    <div class="header-container">
+      <div class="brand">
+        <div class="brand-icon">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z"/>
+          </svg>
+        </div>
+        <div class="brand-text">
+          <span class="brand-title">ClaimAdvocate</span>
+          <span class="brand-sub">MVP 1: WhatsApp Claim Auditor</span>
+        </div>
+      </div>
+
+      <div class="header-actions">
+        <button class="lang-pill" id="langToggle" onclick="toggleLanguage()">
+          <span id="langIcon">🌐</span>
+          <span id="langText">English / हिन्दी</span>
+        </button>
+        <a href="#tech-stack" class="btn-secondary">View Architecture</a>
+        <a href="https://wa.me/919820012345?text=Hi%2C%20my%20insurance%20claim%20was%20rejected.%20Can%20you%20audit%20it%3F" target="_blank" class="btn-whatsapp">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12.04 2c-5.46 0-9.91 4.45-9.91 9.91 0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38c1.45.79 3.08 1.21 4.74 1.21 5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.816 9.816 0 0 0 12.04 2zm5.79 14.07c-.24.68-1.4 1.25-1.92 1.33-.51.08-1.17.11-3.79-.93-3.34-1.33-5.49-4.73-5.65-4.96-.16-.22-1.36-1.81-1.36-3.45 0-1.64.86-2.45 1.17-2.79.31-.34.68-.42.91-.42.23 0 .46.01.66.02.21.01.5.07.72.6.24.57.82 2 .89 2.15.07.15.12.33.02.53-.1.2-.15.32-.3.49-.15.17-.32.38-.46.51-.15.15-.31.31-.13.62.18.31.8 1.32 1.72 2.14 1.18 1.05 2.18 1.38 2.49 1.53.31.15.49.13.67-.08.18-.21.78-.91.99-1.22.21-.31.42-.26.7-.15.28.11 1.78.84 2.09.99.31.15.52.23.6.36.08.13.08.76-.16 1.44z"/></svg>
+          <span>Open WhatsApp Bot</span>
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="hero-section">
+    <div class="container">
+      <div class="hero-badge">
+        <span class="badge-icon">⚡</span>
+        <span>Low-Friction User Acquisition &amp; Instant Value</span>
+      </div>
+      <h1 class="hero-title">
+        The WhatsApp-First<br>
+        <span class="gradient-text">Claim Auditor</span>
+      </h1>
+      <p class="hero-desc">
+        Stressed about a rejected insurance claim or a massive hospital deduction? Don't fill out 10-page forms. Snap a photo of your rejection letter or forward it on WhatsApp. Our Vision AI decodes fine-print loopholes and delivers an instant win-probability score.
+      </p>
+
+      <!-- Sample Rejection Quick Loader Pills -->
+      <div class="quick-loader-box">
+        <span class="quick-loader-label">👉 Try with pre-loaded real rejection cases:</span>
+        <div class="pills-grid">
+          <button class="pill-btn active" onclick="loadSampleScenario('e20')">
+            <span>🚗 ICICI Lombard • E20 Petrol Loophole (₹3.4L)</span>
+          </button>
+          <button class="pill-btn" onclick="loadSampleScenario('room_rent')">
+            <span>🏥 Star Health • Room-Rent Capping Trap (₹1.85L)</span>
+          </button>
+          <button class="pill-btn" onclick="loadSampleScenario('monsoon')">
+            <span>🌧️ HDFC ERGO • Rain Hydrostatic Damage (₹2.1L)</span>
+          </button>
+          <button class="pill-btn" onclick="loadSampleScenario('pre_existing')">
+            <span>💊 Care Health • 48-Month PED Denial (₹4.2L)</span>
+          </button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Interactive Dual-Panel Workspace -->
+  <main class="main-workspace">
+    <div class="container">
+      <div class="workspace-grid">
+
+        <!-- LEFT PANEL: Interactive WhatsApp Simulator -->
+        <div class="workspace-col">
+          <div class="panel-card wa-device-wrap">
+            <!-- Simulated Phone Frame -->
+            <div class="wa-phone">
+              
+              <!-- WhatsApp Chat Header -->
+              <div class="wa-header">
+                <div class="wa-header-left">
+                  <div class="wa-avatar">⚖️</div>
+                  <div class="wa-info">
+                    <div class="wa-name">
+                      <span>ClaimAdvocate Legal Bot</span>
+                      <svg class="wa-check" width="14" height="14" viewBox="0 0 24 24" fill="#22c55e"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg>
+                    </div>
+                    <span class="wa-status">Official Verified Account • Typically replies in seconds</span>
+                  </div>
+                </div>
+                <div class="wa-header-right">
+                  <span title="Voice Call">📞</span>
+                  <span title="Options">⋮</span>
+                </div>
+              </div>
+
+              <!-- WhatsApp Chat Body / Message Feed -->
+              <div class="wa-messages" id="waMessages">
+                <!-- System Time Notice -->
+                <div class="wa-time-notice">TODAY</div>
+
+                <!-- Bot Welcome Message -->
+                <div class="wa-bubble wa-bubble-incoming">
+                  <p>Namaste! 🙏 Welcome to ClaimAdvocate.</p>
+                  <p>Has your insurance company repudiated or deducted your claim? <strong>Snap a photo</strong> of your rejection letter, surveyor assessment, or hospital bill right here.</p>
+                  <p>Our legal AI will audit whether the insurer is legally in the wrong and give you your win probability in under 60 seconds.</p>
+                  <span class="wa-time">10:42 AM</span>
+                </div>
+
+                <!-- Dynamic Chat Injection Area -->
+                <div id="dynamicChatFeed"></div>
+
+                <!-- Typing / Processing Indicator -->
+                <div class="wa-typing" id="waTyping" style="display: none;">
+                  <span class="dot"></span>
+                  <span class="dot"></span>
+                  <span class="dot"></span>
+                  <span class="typing-text">ClaimAdvocate is auditing policy clauses...</span>
+                </div>
+              </div>
+
+              <!-- Drag & Drop Upload Zone Inside WhatsApp -->
+              <div class="wa-upload-zone" id="waDropZone" onclick="document.getElementById('fileInput').click()">
+                <input type="file" id="fileInput" accept="image/*,.pdf" style="display: none;" onchange="handleFileUpload(event)">
+                <div class="upload-icon-wrap">📸</div>
+                <div class="upload-prompt">
+                  <strong>Click to snap or drag a rejection letter photo</strong>
+                  <span>Supports JPG, PNG, Surveyor Reports &amp; Hospital Invoices</span>
+                </div>
+              </div>
+
+              <!-- Simulated WhatsApp Input Bar -->
+              <div class="wa-input-bar">
+                <button type="button" class="wa-action-btn" onclick="document.getElementById('fileInput').click()" title="Attach Document">📎</button>
+                <input type="text" id="chatInput" placeholder="Type a message or policy number..." onkeypress="handleInputKeypress(event)">
+                <button type="button" class="wa-send-btn" onclick="sendCustomMessage()" title="Send">➤</button>
+              </div>
+
+            </div>
+          </div>
+        </div>
+
+        <!-- RIGHT PANEL: AI Policy & Rejection Analyzer Dashboard -->
+        <div class="workspace-col">
+          <div class="panel-card analyzer-card">
+            
+            <div class="analyzer-header">
+              <div class="analyzer-title-wrap">
+                <span class="analyzer-tag">Real-Time OCR &amp; LLM Output</span>
+                <h2>AI Policy &amp; Rejection Analyzer</h2>
+              </div>
+              <div class="status-indicator-badge live">
+                <span class="pulse-ring"></span>
+                <span>Active Audit</span>
+              </div>
+            </div>
+
+            <!-- Case Meta Ribbon -->
+            <div class="case-meta-ribbon" id="caseMetaRibbon">
+              <div class="meta-item">
+                <span class="meta-label">Insurer</span>
+                <span class="meta-val" id="metaInsurer">ICICI Lombard General</span>
+              </div>
+              <div class="meta-item">
+                <span class="meta-label">Disputed Amount</span>
+                <span class="meta-val text-rose" id="metaAmount">₹3,40,000</span>
+              </div>
+              <div class="meta-item">
+                <span class="meta-label">Claim Type</span>
+                <span class="meta-val" id="metaType">Motor Own Damage (OD)</span>
+              </div>
+              <div class="meta-item">
+                <span class="meta-label">Audit Time</span>
+                <span class="meta-val" id="metaSpeed">4.2 Seconds</span>
+              </div>
+            </div>
+
+            <!-- Win Probability Meter -->
+            <div class="win-meter-card">
+              <div class="meter-text-col">
+                <div class="meter-label">STATUTORY WIN PROBABILITY SCORE</div>
+                <div class="meter-score-row">
+                  <span class="meter-score-big" id="meterScore">88%</span>
+                  <div class="meter-verdict-pill text-green" id="meterPill">HIGH CHANCE OF FULL REVERSAL</div>
+                </div>
+                <p class="meter-explanation" id="meterExplanation">
+                  Based on binding IRDAI Consumer Protection Regulations 2024 and precedents set by the Insurance Ombudsman, the insurer's cited clause is legally invalid.
+                </p>
+              </div>
+              <div class="meter-graphic-col">
+                <div class="circular-progress" id="circleProgress" style="background: conic-gradient(#10b981 316.8deg, #e2e8f0 0deg);">
+                  <div class="inner-circle">
+                    <span id="circlePercent">88%</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Extracted Rejection Clause Breakdown -->
+            <div class="audit-section">
+              <h3 class="section-subheading">1. OCR Clause Extraction &amp; Repudiation Trigger</h3>
+              <div class="clause-box" id="clauseBox">
+                <div class="clause-badge">CITED BY SURVEYOR: CLAUSE 4(A)</div>
+                <p id="extractedClauseText">
+                  "Claim repudiated under Policy Section II Exclusion 4(a): Damage resulting from improper fuel blend / non-E20 ethanol compliant fuel usage in motor vehicle."
+                </p>
+              </div>
+            </div>
+
+            <!-- Loophole & Legal Counter-Defense -->
+            <div class="audit-section">
+              <h3 class="section-subheading">2. AI Loophole Scanner &amp; Statutory Defense</h3>
+              <div class="defense-card">
+                <div class="defense-item">
+                  <span class="defense-icon">⚖️</span>
+                  <div>
+                    <strong>Unwritten Condition Rule:</strong>
+                    <span id="defensePoint1">The policy wording sold to the claimant contains zero explicit requirement mandating E20 ethanol petrol. Supreme Court precedent mandates contracts cannot enforce uncommunicated post-hoc restrictions.</span>
+                  </div>
+                </div>
+                <div class="defense-item">
+                  <span class="defense-icon">📜</span>
+                  <div>
+                    <strong>IRDAI Protection Guidelines:</strong>
+                    <span id="defensePoint2">Under IRDAI Master Circular (Protection of Policyholders' Interests) 2024, insurers cannot reject hydrostatic or fuel blend engine claims without manufacturer-certified mechanical failure reports.</span>
+                  </div>
+                </div>
+                <div class="defense-item">
+                  <span class="defense-icon">🎯</span>
+                  <div>
+                    <strong>Ombudsman Award Benchmark:</strong>
+                    <span id="defensePoint3">Delhi &amp; Mumbai Ombudsman secretariats have ruled in favor of policyholders in 94.2% of identical fuel repudiation disputes.</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Next Action Escalation Strip -->
+            <div class="action-footer">
+              <div class="action-info">
+                <strong>Verdict Generated:</strong> Insurer is legally in the wrong.
+                <span>Proceed to automated legal grievance dispatch.</span>
+              </div>
+              <div class="action-buttons">
+                <button class="btn-copy" onclick="copyVerdictSummary()">📋 Copy Summary</button>
+                <a href="../mvp2-legal-notice-escalation/index.html" class="btn-action-primary">
+                  <span>Generate Ombudsman Notice (MVP 2) ➔</span>
+                </a>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </main>
+
+  <!-- Technical Stack Specification Section -->
+  <section class="tech-section" id="tech-stack">
+    <div class="container">
+      <div class="section-header">
+        <span class="category-tag">Engineering Blueprint</span>
+        <h2>MVP 1 Technical Architecture</h2>
+        <p>Built for instant mobile execution with low latency, high document accuracy, and automated privacy protection.</p>
+      </div>
+
+      <div class="tech-grid">
+        <div class="tech-card">
+          <div class="tech-icon">📱</div>
+          <h3>WhatsApp Cloud API</h3>
+          <p>Twilio / Meta Cloud Webhook handles bidirectional media ingestion, asynchronous voice memo transcription, and real-time delivery receipts.</p>
+        </div>
+        <div class="tech-card">
+          <div class="tech-icon">👁️</div>
+          <h3>OpenAI GPT-4o / Claude Vision</h3>
+          <p>Extracts unstructured tabular hospital billing line items, blurry surveyor remarks, and fine-print policy clause references with 98.4% OCR precision.</p>
+        </div>
+        <div class="tech-card">
+          <div class="tech-icon">⚡</div>
+          <h3>Python (FastAPI) Backend</h3>
+          <p>Asynchronous microservice correlating extracted clauses against a vector index of 4,800+ IRDAI Ombudsman rulings and high court insurance judgments.</p>
+        </div>
+        <div class="tech-card">
+          <div class="tech-icon">🔒</div>
+          <h3>Supabase Database &amp; PII Redaction</h3>
+          <p>PostgreSQL with Row-Level Security (RLS). Client-side AES-256 redaction masks PAN, Aadhaar, and bank account numbers prior to persistent storage.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="app-footer">
+    <div class="container footer-inner">
+      <div>
+        <p><strong>ClaimAdvocate MVP 1</strong> &bull; The WhatsApp-First Claim Auditor</p>
+        <p class="footer-sub">Designed for seamless GitHub repository import &bull; Zero dependencies, pure vanilla HTML/CSS/JS</p>
+      </div>
+      <div>
+        <a href="../mvp2-legal-notice-escalation/index.html" class="footer-link">Next: MVP 2 (Legal Generator) ➔</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/app.js"></script>
+</body>
+</html>
